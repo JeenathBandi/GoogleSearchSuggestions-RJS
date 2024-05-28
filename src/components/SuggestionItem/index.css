@@ -1,0 +1,15 @@
+/* Write your CSS here */
+.suggestion-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: space-between;
+}
+.item-heading {
+  font-family: 'Roboto';
+  color: #475569;
+}
+.arrow-img {
+  height: 4vh;
+  width: 2vw;
+  margin-top: 15px;
+}
