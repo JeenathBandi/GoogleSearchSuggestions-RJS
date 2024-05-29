@@ -4,16 +4,17 @@ import {Component} from 'react'
 import SuggestionItem from '../SuggestionItem/index'
 
 class GoogleSuggestions extends Component {
-  state = {searchInput: '', inputString: ''}
+  state = {searchInput: ''}
 
   onInputChange = event => this.setState({searchInput: event.target.value})
 
-  onDisplayShow = key => {
+  onDisplayShow = id => {
     const {suggestionsList} = this.props
-    const {inputString} = this.state
 
-    const resultList = suggestionsList.filter(each => each.id === key)
-    return this.setState({inputString: resultList[0].suggestion})
+    const resultList = suggestionsList.find(each => each.id === id)
+    if (resultList) {
+      this.setState({searchInput: resultList.suggestion})
+    }
   }
 
   render() {
@@ -40,6 +41,7 @@ class GoogleSuggestions extends Component {
             />
             <input
               type="search"
+              value={searchInput}
               placeholder="Search Google"
               className="input-element"
               onChange={this.onInputChange}
