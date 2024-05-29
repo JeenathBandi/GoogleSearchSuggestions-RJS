@@ -3,9 +3,9 @@ import './index.css'
 
 const SuggestionItem = props => {
   const {suggestionsList, key, onDisplayShow} = props
-  const {suggestion} = suggestionsList
+  const {suggestion, id} = suggestionsList
 
-  const onDisplay = () => onDisplayShow(key)
+  const onDisplay = () => onDisplayShow(id)
 
   return (
     <li className="suggestion-item-container">
@@ -21,3 +21,4 @@ const SuggestionItem = props => {
 }
 
 export default SuggestionItem
+
